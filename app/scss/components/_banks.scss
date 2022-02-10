@@ -9,6 +9,7 @@
 
     &__bank {
         justify-content: space-between;
+        height: 220px;
         border: 2px solid #EFF1F4;
         border-radius: 20px;
         box-shadow: 0px 8px 60px #F2F2F2;
@@ -24,31 +25,51 @@
         }
     }
 
-    &__info, &__box {
-        padding: 42px 0 41px;
+    &__info,
+    &__box {
+        padding: 35px 0 35px;
     }
 
     &__info {
+        position: relative;
         padding-left: 39px;
+    }
+
+    &__extra-info {
+        position: absolute;
+        top: 0;
+        left: 220px;
+        padding: 1px 16px;
+        border-radius: 0 0 8px 8px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        color: white;
+        text-transform: uppercase;
     }
 
     &__logo {
         margin-right: 39px;
+        width: 140px;
+        height: 140px;
     }
 
     &__wrapper {
         width: 100%;
+        color: $black;
     }
 
     &__title {
         margin-bottom: 12px;
         font-size: 26px;
+        font-weight: 600;
     }
 
     &__checklist-item {
         position: relative;
         padding-left: 21px;
         margin-bottom: 15px;
+
         &::before {
             content: '';
             position: absolute;
@@ -63,8 +84,11 @@
             background-position: center;
         }
     }
-    
+
     &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 302px;
         background-color: $light-gray;
     }

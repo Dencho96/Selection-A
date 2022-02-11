@@ -6,21 +6,55 @@
     background-repeat: no-repeat;
     background-position: center;
 
+    @include maxw767 {
+        background-image: url('../images/hero-bg-mob.jpg');
+        background-position: top right;
+    }
+
+    &__logo {
+        margin-bottom: 30px;
+
+        @include maxw767 {
+            margin-bottom: 20px;
+        }
+    }
+
     &__inner {
         max-width: 700px;
         width: 100%;
     }
 
     &__title {
+        margin-bottom: 15px;
         color: white;
-        font-size: 48px;
-        line-height: 67px;
+        font-size: 44px;
+        line-height: 58px;
         font-weight: 600;
+
+        @include maxw1205 {
+            font-size: 40px;
+        }
+
+        @include maxw992 {
+            font-size: 36px;
+            line-height: 40px;
+        }
+
+        @include maxw767 {
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
     }
 
     &__text {
         max-width: 655px;
         width: 100%;
         font-size: 22px;
+        color: white;
+
+        @include maxw767 {
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
 }

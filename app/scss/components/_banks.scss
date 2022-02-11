@@ -1,15 +1,27 @@
 .banks {
     padding: 30px 0 40px;
 
+    @include maxw767 {
+        padding: 20px 0 25px;
+    }
+
     &__item {
         &+& {
             margin-top: 20px;
+        }
+
+        @include maxw992 {}
+    }
+
+    &__list {
+        @include maxw992 {
+            display: flex;
+            flex-direction: column;
         }
     }
 
     &__bank {
         justify-content: space-between;
-        height: 220px;
         border: 2px solid #EFF1F4;
         border-radius: 20px;
         box-shadow: 0px 8px 60px #F2F2F2;
@@ -23,6 +35,12 @@
         &--orange {
             border: 2px solid $orange;
         }
+
+        @include maxw992 {
+            margin: 0 auto;
+            max-width: 550px;
+            width: 100%;
+        }
     }
 
     &__info,
@@ -32,7 +50,24 @@
 
     &__info {
         position: relative;
+        align-items: center;
+        padding-right: 8px;
         padding-left: 39px;
+        height: 220px;
+        
+        @include maxw992 {
+            display: flex;
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 50%;
+            width: 100%;
+            height: 203px;
+        }
+    }
+
+    &__extra-info ,&__box, &__box-text, &__btn {
+        text-align: center;
     }
 
     &__extra-info {
@@ -46,29 +81,63 @@
         line-height: 26px;
         color: white;
         text-transform: uppercase;
+
+        @include maxw992 {
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 3px 10px;
+            min-width: 120px;
+            font-size: 12px;
+            line-height: 18px;
+        }
     }
 
     &__logo {
         margin-right: 39px;
-        width: 140px;
+        max-width: 140px;
+        width: 100%;
         height: 140px;
+
+        @include maxw992 {
+            margin-right: 0;
+            max-width: 120px;
+            height: 120px;
+        }
     }
 
     &__wrapper {
         width: 100%;
         color: $black;
+
+        @include maxw992 {
+            display: none;
+        }
     }
 
     &__title {
+        max-width: 520px;
+        width: 100%;
         margin-bottom: 12px;
         font-size: 26px;
         font-weight: 600;
+
+        @include maxw1205 {
+            font-size: 22px;
+        }
     }
 
     &__checklist-item {
         position: relative;
         padding-left: 21px;
-        margin-bottom: 15px;
+        font-size: 16px;
+
+        &+& {
+            margin-top: 10px;
+        }
+
+        @include maxw1205 {
+            font-size: 14px;
+        }
 
         &::before {
             content: '';
@@ -84,37 +153,61 @@
             background-position: center;
         }
     }
-
+    
     &__box {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 302px;
+        max-width: 302px;
+        width: 100%;
         background-color: $light-gray;
+
+        @include maxw992 {
+            max-width: 50%;
+            padding: 12px 10px;
+        }
+    }
+
+    &__box-title {
+        display: none;
+        margin: 0 auto 5px;
+        font-weight: 600;
+        color: $black;
+        @include maxw992 {
+            display: block;
+        }
     }
 
     &__box-text {
         margin: 0 auto 14px;
         max-width: 210px;
         width: 100%;
-        text-align: center;
     }
 
     &__btn {
         display: block;
         margin: 0 auto;
-        padding: 16px 10px;
+        padding: 18px 10px 5px;
         width: 170px;
         height: 52px;
         text-transform: uppercase;
-        text-align: center;
         color: white;
+        font-weight: 600;
         border-radius: 14px;
         background-color: $violet;
         transition: opacity 0.2s;
 
         &:hover {
             opacity: 0.7;
+        }
+
+        @include maxw992 {
+            width: 135px;
+            font-size: 14px;
+        }
+
+        @include maxw350 {
+            width: 120px;
         }
     }
 }
